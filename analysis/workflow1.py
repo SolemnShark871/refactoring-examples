@@ -2,14 +2,17 @@ from math import *
 
 # read sample files
 
-with open('data1.csv') as file1:
-    lines1 = file1.readlines()
-    data1 = []
-    for line in lines1:
-        row = []
-        for n in line.split(','):
-            row.append(float(n.strip()))
-        data1.append(row)
+def open_file(file_name,DATA_PATH = "" ):
+    """ Function to open file and return data in nested lists"""
+    with open(DATA_PATH + file_name) as file1:
+        lines1 = file1.readlines()
+        data1 = []
+        for line in lines1:
+            row = []
+            for n in line.split(','):
+                row.append(float(n.strip()))
+            data1.append(row)
+        return data1
 
 with open('data2.csv') as file2:
     lines2 = file2.readlines()
