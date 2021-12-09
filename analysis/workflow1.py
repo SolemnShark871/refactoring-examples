@@ -1,11 +1,23 @@
 from math import *
-
+import numpy as np
 # read sample files
 
 def open_file(file_name,DATA_PATH = "" ):
     """ Function to open file and return data in nested lists"""
     with open(DATA_PATH + file_name) as file1:
+        
         lines1 = file1.readlines()
+        m = len(file1.readlines()) #number of rows
+        n = len(maxlines1[0].split(',')) # columns
+
+        data1 = np.array(
+
+            #loop through rows
+
+            [float(n.strip()) for n in line.split(',')]     #loop through columns 
+        )
+
+
         data1 = []
         for line in lines1:
             row = []
